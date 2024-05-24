@@ -38,6 +38,10 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
                                         ;(package-initialize)
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
+(set-face-attribute 'default nil :height 250)
+(setq package-check-signature nil)
 
 (defvar prelude-user
   (getenv
@@ -161,5 +165,8 @@ by Prelude.")
 (prelude-eval-after-init
  ;; greet the use with some useful tip
  (run-at-time 5 nil 'prelude-tip-of-the-day))
+
+;; my stuff eva
+(add-hook 'rust-mode-hook 'cargo-minor-mode)
 
 ;;; init.el ends here
